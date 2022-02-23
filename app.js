@@ -16,6 +16,7 @@ mongoose.connect('mongodb+srv://mkieffer:Aspenparks12@cluster0.t6jua.mongodb.net
 
 var indexRouter = require('./routes/index');
 var animalRouter = require('./routes/animal');
+var my_script = require('./public/javascripts/my_script');
 
 var app = express();
 
@@ -27,6 +28,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors());
 
 app.use('/', indexRouter);
+app.use('/', animalRouter);
 app.use('/animals', animalRouter);
 
 
