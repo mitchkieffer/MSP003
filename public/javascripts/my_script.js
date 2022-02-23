@@ -1,4 +1,3 @@
-
 let Zoo = new Object();
 let listBox = document.getElementById("animalsList");
 let animalName = document.getElementById("animalName");
@@ -28,7 +27,7 @@ let newAnimalList;
 //makeAsyncHttpRequest("GET", "/test", "getAnimals.js");
 
 
-fetch('http://zooproj.azurewebsites.net/animal')
+fetch('http://zooproject.azurewebsites.net/animal/animals')
   .then(response => response.json())
   .then(data => APItoArray(data));
 
