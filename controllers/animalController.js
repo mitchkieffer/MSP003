@@ -10,7 +10,7 @@ const ZooSchema = new Schema({
 const Animal = mongoose.model('Animal', ZooSchema);
 
 const getAnimals = (req, res) => {
-    Zoo.find({}, (err, zoo) => {
+    Animal.find({}, (err, zoo) => {
         if (err) {
             res.send(err);
         }
