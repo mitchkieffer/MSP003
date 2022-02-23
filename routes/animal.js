@@ -1,39 +1,16 @@
 const express = require('express');
+
 const router = express.Router();
-const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
 
-const ZooSchema = new Schema({
-    animals: {
-        type: Array
-    }
+router.get('/', (req, res) => {
+    res.status(200).send({
+        "animals":[
+            {"name":"Perry", "type":"Platypus", "age":2, "gender":"Female", "weight":3.2, "isPregnant":true},
+            {"name":"Harry", "type":"Hummingbird", "age":4, "gender":"Male", "weight":7, "isPregnant":false},
+            {"name":"Paul", "type":"Shark", "age":5, "gender":"Male", "weight":852, "isPregnant":false},
+            {"name":"Charlie", "type":"Chimpanzee", "age":6, "gender":"Male", "weight":8, "isPregnant":false},
+          ]
+    })
 });
-
-const Animal = mongoose.model('Animal', ZooSchema);
-
-
-// Get all zoos
-const getAniamls = (req, res) => {
-    Animal.find({}, (err, animal) => {
-        if (err) {
-            res.send(err);
-        }
-        res.json(animal);
-    });
-}
-
-
-let middleware = (req) => {
-    console.log(`Request from: ${req.originalUrl}`)
-    console.log(`Request type: ${req.method}`)
-};
-
-
-
-router.get('/animals', (req, res, next) => {
-    middleware(req);
-    next();
-}, getAniamls);
-
 
 module.exports = router;
