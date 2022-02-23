@@ -9,12 +9,12 @@ const ZooSchema = new Schema({
     }
 });
 
-const Animal = mongoose.model('Zoo', ZooSchema);
+const Animal = mongoose.model('Animal', ZooSchema);
 
 
 // Get all zoos
 const getAniamls = (req, res) => {
-    Zoo.find({}, (err, zoo) => {
+    Animal.find({}, (err, zoo) => {
         if (err) {
             res.send(err);
         }
