@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>A1 Zoo: Client Side 2 &mdash; Website Template</title>
+        <meta charset="utf-8" />
+        <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <link href="main.css" rel="stylesheet" />
+    <script src="my_script.js" defer></script>
+
+    </head>
+    <body>
+    <div class="zooField">
+        <div>
+            <label id="zooName">Name: </label>
+            <Field id="name"></Field>
+        </div>
+        <div>
+            <label id="zooCapacity">Capacity: </label>
+            <Field id="capacity"></Field>
+        </div>
+        <div>
+            <label id="zooNumberOfAnimals">Number of Aniamls: </label>
+            <Field id="numberOfAnimals"></Field>
+        </div>
+        <div>
+            <label id="zooNumberOfGuests">Number of Guests: </label>
+            <Field id="numberOfGuests"></Field>
+        </div>
+    </div>
+
+    
+
+    <div class="animalTable">
+        <table id = "animalTable">
+            <h2 id = "animalList">Animal List</h2>
+        </table>
+    </div>
+
+            <guest-counter count="0"></guest-counter>
+            <script src="guestCounter.js"></script>
+
+    <div>
+        <select id="animalsList" size="numberOfAnimals" onclick="populateAnimalForm()">
+            <option id="optionOne" value="option1">List of Animals</option>
+            </select>
+    </div>
+
+    <div>
+        <form id="animalForm">
+            <label>Animal Name:</label>
+            <input type="text" class="input" id="animalName" name="inputGuests" ><br>
+            <label>Animal Type:</label>
+            <input type="text" class="input" id="animalType" name="inputGuests" ><br>
+            <label>Animal Age:</label>
+            <input type="text" class="input" id="animalAge" name="inputGuests" ><br>
+            <label>Animal Gender:</label>
+            <input type="text" class="input" id="animalGender" name="inputGuests" ><br>
+            <label>Animal Weight:</label>
+            <input type="text" class="input" id="animalWeight" name="inputGuests" ><br>
+            <label>Animal IsPregnant?:</label>
+            <input type="text" class="input" id="animalIsPreg" name="inputGuests" ><br>
+            <input type="button" class="input" id="addAnimal" value="Add Animal">
+            <input type="button" class="input" id="editAnimal" value="Edit Animal">
+            <input type="button" class="input" id="removeAnimal" value="Remove Animal">
+
+        </form>
+    </div>
+
+    </body>
+</html>
