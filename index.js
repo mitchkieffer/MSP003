@@ -36,5 +36,5 @@ app.use('/test', getanimals);
 
 //app.use(express.static(__dirname));
 //app.use(express.json());
-app.listen(process.env.PORT ?? 8080);
+app.use(process.env.PORT ?? 8080);
 //app.listen(port, ()=>console.log('Application Started'));
