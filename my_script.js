@@ -13,7 +13,7 @@ let newAnimalList;
 
 const makeAsyncHttpRequest = (method, url, data) => {
     const xhr = new XMLHttpRequest();
-    xhr.open('GET', '/test');
+    xhr.open('GET', '/animal');
 
     xhr.responseType = 'json';
 
