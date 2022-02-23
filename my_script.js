@@ -11,35 +11,35 @@ let form = document.getElementById("animalForm");
 let text = form.querySelectorAll("input[type='text']");
 let newAnimalList;
 
-const makeAsyncHttpRequest = (method, url, data) => {
-    const xhr = new XMLHttpRequest();
-    xhr.open('GET', '/animal');
-
-    xhr.responseType = 'json';
-
-    xhr.onload = () => {
-        const data = xhr.response;
-        console.log(data);
-    }
-
-    xhr.send();
-}
-
-makeAsyncHttpRequest("GET", "/test", "getAnimals.js");
-
-
-//fetch('https://mitchkieffer.azurewebsites.net/test')
-//  .then(response => response.json())
-//  .then(data => APItoArray(data));
+//const makeAsyncHttpRequest = (method, url, data) => {
+//    const xhr = new XMLHttpRequest();
+ //   xhr.open('GET', '/animal');
 //
-//    function APItoArray(animal){
-//        Zoo.Animalss = animal;
-//        console.log(Zoo.Animalss);
- //       newAnimalList = Zoo.Animalss
- //       populateZooFields();
- //       populateAnimals(Zoo.Animalss);
- //       populateAnimalListBox(Zoo.Animalss);
-//    }
+//    xhr.responseType = 'json';
+//
+ //   xhr.onload = () => {
+ //       const data = xhr.response;
+ //       console.log(data);
+ //   }
+//
+ //   xhr.send();
+//}
+//
+//makeAsyncHttpRequest("GET", "/test", "getAnimals.js");
+
+
+fetch('http://zooproj.azurewebsites.net/animal')
+  .then(response => response.json())
+  .then(data => APItoArray(data));
+
+    function APItoArray(animal){
+        Zoo.Animalss = animal;
+        console.log(Zoo.Animalss);
+        newAnimalList = Zoo.Animalss
+        populateZooFields();
+        populateAnimals(Zoo.Animalss);
+        populateAnimalListBox(Zoo.Animalss);
+    }
 
 document.getElementById("editAnimal").addEventListener('click', editAnimal);
 document.getElementById("addAnimal").addEventListener('click', addAnimal);
