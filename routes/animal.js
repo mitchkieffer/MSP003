@@ -30,7 +30,7 @@ let middleware = (req) => {
 
 
 
-router.get('/animals', async (req, res, next) => {
+router.get('/animals', (req, res, next) => {
     middleware(req);
     next();
 }, getAniamls);
