@@ -9,8 +9,8 @@ const bodyParser = require('body-parser');
 const port = 3000;
  
 
-var indexRouter = require();
-var usersRouter = require();
+//var indexRouter = require();
+//var usersRouter = require();
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -36,5 +36,5 @@ app.use('/test', getanimals);
 
 //app.use(express.static(__dirname));
 //app.use(express.json());
-//app.listen(process.env.PORT ?? 8080);
-app.listen(port, ()=>console.log('Application Started'));
+app.listen(process.env.PORT ?? 8080);
+//app.listen(port, ()=>console.log('Application Started'));
