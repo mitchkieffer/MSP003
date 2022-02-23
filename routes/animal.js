@@ -14,11 +14,11 @@ const Animal = mongoose.model('Animal', ZooSchema);
 
 // Get all zoos
 const getAniamls = (req, res) => {
-    Animal.find({}, (err, zoo) => {
+    Animal.find({}, (err, animal) => {
         if (err) {
             res.send(err);
         }
-        res.json(zoo);
+        res.json(animal);
     });
 }
 
