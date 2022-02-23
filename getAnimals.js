@@ -1,28 +1,31 @@
+
+
+
+
+
 const express = require('express');
-const Post = require('../A Zoo/Post');
-const router = express.Router();
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan')
+const cors = require('cors');
 
-router.get('/', async (req, res) => {
-    try{
-        const posts = await Post.find();
-        res.json(posts);
-    }catch(err){
-        res.json({message:"Something is Not Working"});
-    }
-});
+//var indexRouter = require();
+//var usersRouter = require();
 
-router.post('/', (req, res) => {
-    const test = new Post({
-        id: req.body.id,
-        name: req.body.name
-    });
+//Import Routes
+const getanimals = require('./getAnimals');
 
-    test.save().then(data => {
-        res.json(data);
-    })
-    .catch(err => {
-        res.json();
-    })
-});
 
-module.exports = router;
+app.use(logger('dev'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(cors());
+
+
+
+app.use('/test', getanimals);
+
+
+module.exports = app;
